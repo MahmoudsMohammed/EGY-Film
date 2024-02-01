@@ -1,5 +1,6 @@
 declare var google: any;
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -9,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './auth.component.scss',
 })
 export class AuthComponent implements OnInit {
+  constructor(private router: Router) {}
   ngOnInit(): void {
     google.accounts.id.initialize({
       client_id:
@@ -28,5 +30,6 @@ export class AuthComponent implements OnInit {
   googleData(res: any) {
     const userData = JSON.parse(atob(res.split('.')[1]));
     sessionStorage.setItem('userData', JSON.stringify(userData));
+    this.router.navigate(['home']);
   }
 }
