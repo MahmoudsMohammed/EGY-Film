@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   isauth = false;
+  userData;
   ngOnInit(): void {
     if (
       !sessionStorage.getItem('userData') ||
@@ -18,6 +19,10 @@ export class HeaderComponent implements OnInit {
       this.isauth = false;
     } else {
       this.isauth = true;
+      this.userData = JSON.parse(sessionStorage.getItem('userData'));
+      console.log(this.userData);
     }
   }
 }
+// given_name
+// picture

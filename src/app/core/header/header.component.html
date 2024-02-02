@@ -37,7 +37,22 @@
           <a class="nav-link">Browse by Language</a>
         </li>
       </ul>
+      <!-- user Data when signIn -->
+      <div class="data d-flex align-items-center ms-md-auto" *ngIf="isauth">
+        <p class="m-0">
+          Welcome
+          <strong>{{ userData.given_name }}</strong>
+        </p>
+        <div class="image">
+          <img src="{{ userData.picture }}" alt="" />
+        </div>
+        <a class="signin" *ngIf="isauth">
+          |
+          <i class="fa-solid fa-right-to-bracket"></i> SignOut
+        </a>
+      </div>
     </div>
+
     <!-- signIn -->
     <a class="signin" *ngIf="!isauth">
       <i class="fa-solid fa-right-to-bracket"></i>

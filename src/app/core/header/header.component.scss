@@ -19,9 +19,30 @@ a {
 .signin {
   & {
     color: white;
+    transition: 0.5s;
+  }
+  &:hover {
+    color: #a6a6a6;
+  }
+  &:hover i {
+    color: #a6a6a6;
   }
   i {
     color: white;
     margin-right: 5px;
+    transition: 0.5s;
+  }
+}
+.data {
+  & {
+    color: white;
+    gap: 10px;
+  }
+  .image {
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
   }
 }
