@@ -1,0 +1,49 @@
+.main {
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  .mySwiper {
+    & {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      & {
+        position: relative;
+        height: 320px !important;
+        width: 300px !important;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-right: 15px !important;
+        transition: 0.5s ease-in-out;
+      }
+      &:hover {
+        z-index: 2;
+        transform: scale(1.15, 1.1);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 5;
+      }
+      .desc {
+        & {
+          position: absolute;
+          background-color: rgba($color: #000000, $alpha: 0.8);
+          bottom: -100%;
+          left: 0;
+          display: block;
+          height: 150px;
+          z-index: 10;
+          transition: 0.5s ease-in-out;
+        }
+      }
+      &:hover .desc {
+        bottom: 0;
+      }
+    }
+  }
+}
