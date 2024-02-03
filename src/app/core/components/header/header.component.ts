@@ -24,5 +24,3 @@ export class HeaderComponent implements OnInit {
     }
   }
 }
-// given_name
-// picture
