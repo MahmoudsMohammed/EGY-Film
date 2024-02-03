@@ -6,6 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class decriptionPipe implements PipeTransform {
   transform(value: string, ...args: any[]) {
-    return `${value.substr(0, 150)}....`;
+    return `${value.substr(0, 130)}....`;
   }
 }
