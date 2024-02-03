@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
     } else {
       this.isauth = true;
       this.userData = JSON.parse(sessionStorage.getItem('userData'));
-      console.log(this.userData);
     }
   }
 }

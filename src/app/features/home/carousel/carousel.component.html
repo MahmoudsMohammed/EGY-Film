@@ -1,20 +1,23 @@
 <div class="container-fluid py-5 main">
-  <p class="title ps-4">Title</p>
+  <p class="title ps-4">{{ title }}</p>
   <div class="swiper mySwiper" #swiper>
     <div class="swiper-wrapper px-4 py-3">
-      <ng-container *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9]">
+      <ng-container *ngFor="let film of films">
         <div class="swiper-slide">
           <img
-            src="https://m.media-amazon.com/images/M/MV5BYzFiZjc1YzctMDY3Zi00NGE5LTlmNWEtN2Q3OWFjYjY1NGM2XkEyXkFqcGdeQXVyMTUyMTUzNjQ0._V1_.jpg"
+            src="https://image.tmdb.org/t/p/w500/{{ film.poster_path }}"
             alt=""
           />
           <div class="desc p-2 d-block">
-            <span class="fw-bold text-capitalize">mission imposible</span>
+            <span class="fw-bold text-capitalize">{{
+              film.original_title
+            }}</span>
             <p class="m-0 my-2 lh-sm fw-light">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
-              minus excepturi asperiores reprehenderit praesentium.
+              {{ film.overview | descrip }}
             </p>
-            <span class="text-success fw-semibold">Vote Average : 9.7</span>
+            <span class="text-success fw-semibold"
+              >Vote Average : {{ film.vote_average | average }}</span
+            >
           </div>
         </div>
       </ng-container>

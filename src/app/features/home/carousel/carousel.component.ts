@@ -1,16 +1,27 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  ViewChild,
+} from '@angular/core';
 import Swiper from 'swiper';
+import { responseInterface } from '../../../shared/models/response';
+import { decriptionPipe } from './pipes/decription.pipe';
+import { averagePipe } from './pipes/average.pipe';
 
 @Component({
   selector: 'carousel',
   standalone: true,
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.scss',
-  imports: [CommonModule],
+  imports: [CommonModule, decriptionPipe, averagePipe],
 })
 export class carouselComponent implements AfterViewInit {
   @ViewChild('swiper') swiper: ElementRef;
+  @Input({ required: true }) title: string;
+  @Input({ required: true }) films: responseInterface[];
 
   ngAfterViewInit(): void {
     // intialize a swiper

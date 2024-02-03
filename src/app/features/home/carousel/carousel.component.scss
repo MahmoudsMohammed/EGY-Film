@@ -1,8 +1,8 @@
 .main {
   .title {
     font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 15px;
+    font-weight: 700;
+    margin-bottom: 5px;
   }
   .mySwiper {
     & {
@@ -16,11 +16,11 @@
         width: 300px !important;
         border-radius: 5px;
         overflow: hidden;
-        margin-right: 15px !important;
-        transition: 0.5s ease-in-out;
+        margin-right: 10px !important;
+        transition: 0.4s ease-in-out;
       }
       &:hover {
-        z-index: 2;
+        z-index: 20;
         transform: scale(1.15, 1.1);
       }
       img {
@@ -37,12 +37,12 @@
           left: 0;
           display: block;
           height: 150px;
-          z-index: 10;
-          transition: 0.5s ease-in-out;
+          transition: 0.4s ease-in-out;
         }
       }
       &:hover .desc {
         bottom: 0;
+        z-index: 10;
       }
     }
   }
