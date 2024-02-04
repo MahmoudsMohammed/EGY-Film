@@ -1,6 +1,7 @@
 declare var google: any;
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { authService } from './auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrl: './auth.component.scss',
 })
 export class AuthComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authServ: authService) {}
   ngOnInit(): void {
     google.accounts.id.initialize({
       client_id:
@@ -31,5 +32,6 @@ export class AuthComponent implements OnInit {
     const userData = JSON.parse(atob(res.split('.')[1]));
     sessionStorage.setItem('userData', JSON.stringify(userData));
     this.router.navigate(['home']);
+    this.authServ.user.next(userData);
   }
 }
