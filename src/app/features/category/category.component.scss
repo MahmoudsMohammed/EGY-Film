@@ -11,6 +11,7 @@ main {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 15px;
+      overflow: hidden;
     }
     .film {
       & {
@@ -32,7 +33,7 @@ main {
       .info {
         & {
           position: absolute;
-          z-index: -1;
+          backface-visibility: hidden;
           top: 0;
           left: 0;
           width: 100%;
@@ -46,6 +47,7 @@ main {
           justify-content: center;
           padding: 0px 15px;
           border-radius: 5px;
+          cursor: default;
         }
         .head {
           & {
@@ -81,7 +83,7 @@ main {
         p {
           line-height: 1.6;
         }
-        button {
+        .more {
           background-color: #e50914;
           color: white;
           padding: 5px 15px;
