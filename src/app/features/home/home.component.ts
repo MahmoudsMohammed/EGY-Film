@@ -3,11 +3,12 @@ import { carouselComponent } from './carousel/carousel.component';
 import { movieService } from '../../shared/services/movies.services';
 import { responseInterface } from '../../shared/models/response';
 import { forkJoin, map } from 'rxjs';
+import { bannerComponent } from './banner/banner.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [carouselComponent],
+  imports: [carouselComponent, bannerComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

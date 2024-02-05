@@ -1,33 +1,6 @@
-<!-- <nav
-  class="navbar navbar-expand-lg py-3"
-  style="background-color: black"
-  data-bs-theme="dark"
->
-  <div class="container-md">
-    <a class="navbar-brand logo"><i class="fa-solid fa-film"></i> Show Time</a>
-    <div class="data d-flex align-items-center ms-md-auto" *ngIf="auth">
-      <p class="m-0">
-        Welcome
-        <strong>{{ userData.given_name }}</strong>
-      </p>
-      <div class="image">
-        <img src="{{ userData.picture }}" alt="" />
-      </div>
-      <a class="signin" *ngIf="auth" (click)="onSignOut()" routerLink="">
-        |
-        <i class="fa-solid fa-right-to-bracket"></i> SignOut
-      </a>
-    </div>
-    <a class="signin" *ngIf="!auth">
-      <i class="fa-solid fa-right-to-bracket"></i>
-      SignIn
-    </a>
-  </div>
-</nav> -->
-
 <nav
   class="navbar navbar-expand-lg py-3"
-  style="background-color: black"
+  style="background-color: black; position: sticky; top: 0; z-index: 100"
   data-bs-theme="dark"
 >
   <div class="container-md">
