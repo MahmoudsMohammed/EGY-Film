@@ -12,7 +12,7 @@ import { authService } from '../../../features/auth/auth.service';
 })
 export class HeaderComponent implements OnInit {
   constructor(private authService: authService) {}
-  userData = {};
+  userData;
   auth = false;
   ngOnInit(): void {
     this.authService.user.subscribe((res) => {

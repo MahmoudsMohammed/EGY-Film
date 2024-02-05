@@ -1,14 +1,19 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './features/home/home.component';
+import { AuthComponent } from './features/auth/auth.component';
+import { filmComponent } from './features/film/film.component';
 
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./features/auth/auth.component').then((a) => a.AuthComponent),
+    component: AuthComponent,
   },
   {
     path: 'home',
-    loadComponent: () =>
-      import('./features/home/home.component').then((a) => a.HomeComponent),
+    component: HomeComponent,
+  },
+  {
+    path: 'film',
+    component: filmComponent,
   },
 ];

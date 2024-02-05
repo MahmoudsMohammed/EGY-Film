@@ -26,36 +26,42 @@ export class carouselComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     // intialize a swiper
     new Swiper(this.swiper.nativeElement, {
+      speed: 0,
       slidesPerView: 3,
       slidesPerGroup: 2,
       centeredSlides: true,
       loop: true,
       breakpoints: {
         600: {
+          speed: 0,
           slidesPerView: 2,
           slidesPerGroup: 2,
           spaceBetween: 5,
           centeredSlides: true,
         },
         900: {
+          speed: 0,
           slidesPerView: 3,
           slidesPerGroup: 3,
           spaceBetween: 5,
           centeredSlides: true,
         },
         1200: {
+          speed: 0,
           slidesPerView: 4,
           slidesPerGroup: 4,
           spaceBetween: 5,
           centeredSlides: false,
         },
         1500: {
+          speed: 0,
           slidesPerView: 5,
           slidesPerGroup: 5,
           spaceBetween: 5,
           centeredSlides: false,
         },
         1800: {
+          speed: 0,
           slidesPerView: 5,
           slidesPerGroup: 6,
           spaceBetween: 5,

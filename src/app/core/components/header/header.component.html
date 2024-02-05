@@ -4,7 +4,7 @@
   data-bs-theme="dark"
 >
   <div class="container-md">
-    <a class="navbar-brand logo"><i class="fa-solid fa-film"></i> Show Time</a>
+    <a class="navbar-brand logo"><i class="fa-solid fa-film"></i> EGY-Film</a>
     <button
       *ngIf="auth"
       class="navbar-toggler"
@@ -18,9 +18,15 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav" *ngIf="auth">
-      <div class="form-group search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Enter Film Name" />
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page">Home</a>
+        <a class="nav-link">Action</a>
+        <a class="nav-link">Adventure</a>
+        <a class="nav-link">Animation</a>
+        <a class="nav-link">Comedy</a>
+        <button class="nav-link search">
+          <i class="fa-solid fa-magnifying-glass"></i> Search
+        </button>
       </div>
       <!-- user Data when signIn -->
       <div class="data d-flex align-items-center ms-md-auto" *ngIf="auth">
