@@ -13,7 +13,7 @@
               film.original_title
             }}</span>
             <p class="m-0 my-2 lh-sm fw-light">
-              {{ film.overview | descrip }}
+              {{ film.overview | descrip : 20 }}
             </p>
             <span class="text-success fw-semibold"
               >Vote Average : {{ film.vote_average | average }}</span

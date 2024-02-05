@@ -1,0 +1,25 @@
+<main>
+  <div class="container">
+    <div class="main-row">
+      <ng-container *ngFor="let movie of movies">
+        <div class="film">
+          <img
+            src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+            alt=""
+          />
+          <div class="info">
+            <div class="head">
+              <h3>{{ movie.original_title }}</h3>
+              <div class="rate">
+                <span>{{ movie.vote_average | average }}</span>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+            <p>{{ movie.overview | descrip : 50 }}</p>
+            <button class="btn" style="cursor: pointer">More</button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</main>

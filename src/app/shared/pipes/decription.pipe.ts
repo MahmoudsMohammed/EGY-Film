@@ -5,7 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'descrip',
 })
 export class decriptionPipe implements PipeTransform {
-  transform(value: string, ...args: any[]) {
-    return `${value.split(' ').slice(0, 20).join(' ')}....`;
+  transform(value: string, args: number) {
+    let n = value.split(' ');
+    return n.length > args ? `${n.slice(0, args).join(' ')}....` : value;
   }
 }

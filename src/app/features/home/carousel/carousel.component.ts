@@ -8,8 +8,8 @@ import {
 } from '@angular/core';
 import Swiper from 'swiper';
 import { responseInterface } from '../../../shared/models/response';
-import { decriptionPipe } from './pipes/decription.pipe';
-import { averagePipe } from './pipes/average.pipe';
+import { decriptionPipe } from '../../../shared/pipes/decription.pipe';
+import { averagePipe } from '../../../shared/pipes/average.pipe';
 
 @Component({
   selector: 'carousel',

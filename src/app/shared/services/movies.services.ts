@@ -56,6 +56,14 @@ export class movieService {
     );
   }
 
+  getByCategory(id) {
+    return this.http.get<Root>(
+      `https://api.themoviedb.org/3/discover/movie?with_genres=${id}`,
+      options
+    );
+  }
+
+  // ##########################
   getRatedMovies() {
     return this.http.get<Root>(
       'https://api.themoviedb.org/3/guest_session/guest_session_id/rated/movies',
