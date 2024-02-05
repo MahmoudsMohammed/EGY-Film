@@ -6,7 +6,7 @@ import { categoryComponent } from './features/category/category.component';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'auth',
     component: AuthComponent,
   },
   {
@@ -20,5 +20,10 @@ export const routes: Routes = [
   {
     path: 'category/:id',
     component: categoryComponent,
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: 'home',
   },
 ];

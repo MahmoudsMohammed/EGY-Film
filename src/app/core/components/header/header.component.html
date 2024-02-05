@@ -4,7 +4,9 @@
   data-bs-theme="dark"
 >
   <div class="container-md">
-    <a class="navbar-brand logo"><i class="fa-solid fa-film"></i> EGY-Film</a>
+    <a class="navbar-brand logo" routerLink="home"
+      ><i class="fa-solid fa-film"></i> EGY-Film</a
+    >
     <button
       *ngIf="auth"
       class="navbar-toggler"
@@ -19,11 +21,25 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav" *ngIf="auth">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page">Home</a>
-        <a class="nav-link">Action</a>
-        <a class="nav-link">Adventure</a>
-        <a class="nav-link">Animation</a>
-        <a class="nav-link">Comedy</a>
+        <a
+          class="nav-link"
+          aria-current="page"
+          routerLink="home"
+          routerLinkActive="active"
+          >Home</a
+        >
+        <a class="nav-link" routerLink="category/28" routerLinkActive="active"
+          >Action</a
+        >
+        <a class="nav-link" routerLink="category/12" routerLinkActive="active"
+          >Adventure</a
+        >
+        <a class="nav-link" routerLink="category/16" routerLinkActive="active"
+          >Animation</a
+        >
+        <a class="nav-link" routerLink="category/35" routerLinkActive="active"
+          >Comedy</a
+        >
         <button class="nav-link search">
           <i class="fa-solid fa-magnifying-glass"></i> Search
         </button>
