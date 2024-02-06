@@ -56,9 +56,30 @@ export class movieService {
     );
   }
 
-  getByCategory(id) {
+  getByCategory(id: number) {
     return this.http.get<Root>(
       `https://api.themoviedb.org/3/discover/movie?with_genres=${id}`,
+      options
+    );
+  }
+
+  getMovieDetails(id: number) {
+    return this.http.get<Root>(
+      `https://api.themoviedb.org/3/movie/${id}`,
+      options
+    );
+  }
+
+  getMovieVideo(id: number) {
+    return this.http.get(
+      `https://api.themoviedb.org/3/movie/${id}/videos`,
+      options
+    );
+  }
+
+  getMovieCredit(id: number) {
+    return this.http.get(
+      `https://api.themoviedb.org/3/movie/${id}/credits`,
       options
     );
   }

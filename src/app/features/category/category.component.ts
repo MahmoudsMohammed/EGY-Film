@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { movieService } from '../../shared/services/movies.services';
 import { responseInterface } from '../../shared/models/response';
 import { NgClass, NgFor } from '@angular/common';
@@ -11,7 +11,7 @@ import { decriptionPipe } from '../../shared/pipes/decription.pipe';
   standalone: true,
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss',
-  imports: [NgFor, NgClass, averagePipe, decriptionPipe],
+  imports: [NgFor, NgClass, averagePipe, decriptionPipe, RouterModule],
 })
 export class categoryComponent implements OnInit {
   constructor(
@@ -25,7 +25,6 @@ export class categoryComponent implements OnInit {
       this.id = +p['id'];
       this.movieServie.getByCategory(this.id).subscribe((res) => {
         this.movies = res.results;
-        console.log(this.movies);
       });
     });
   }
