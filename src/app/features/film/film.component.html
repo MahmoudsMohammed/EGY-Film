@@ -1,12 +1,17 @@
 <main>
+  <trailer [Url]="video" *ngIf="watchTrailer" (close)="watchTrailer = false" />
   <div class="container">
-    <img src="" alt="" />
+    <img
+      *ngIf="false"
+      src="https://image.tmdb.org/t/p/w500/{{ details.poster_path }}"
+      alt=""
+    />
     <div class="info">
       <h3></h3>
       <p></p>
-      <button class="btn">watch Trailer</button>
+      <button class="btn" (click)="watchTrailer = true">watch Trailer</button>
     </div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-lg-4">
         <div class="row">
           <div class="col-lg-2">
@@ -18,6 +23,6 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </main>

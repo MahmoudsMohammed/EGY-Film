@@ -1,0 +1,15 @@
+main {
+  & {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    padding-top: 30px;
+    background-color: white;
+  }
+  img {
+    display: block;
+    width: 80%;
+    height: 500px;
+    margin: 0px auto;
+  }
+}
