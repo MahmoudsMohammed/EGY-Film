@@ -8,11 +8,12 @@ import {
 } from '@angular/core';
 import Swiper from 'swiper';
 import { responseInterface } from '../../../shared/models/response';
+import { RouterLink } from '@angular/router';
 
 @Component({
   standalone: true,
   selector: 'banner',
-  imports: [NgFor],
+  imports: [NgFor, RouterLink],
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss',
 })

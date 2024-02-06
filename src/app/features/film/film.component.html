@@ -1,5 +1,5 @@
+<trailer [Url]="video" *ngIf="watchTrailer" (close)="watchTrailer = false" />
 <main>
-  <trailer [Url]="video" *ngIf="watchTrailer" (close)="watchTrailer = false" />
   <div class="container">
     <img
       src="https://image.tmdb.org/t/p/w500/{{ details.poster_path }}"

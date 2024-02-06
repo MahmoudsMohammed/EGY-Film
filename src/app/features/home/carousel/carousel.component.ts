@@ -10,13 +10,14 @@ import Swiper from 'swiper';
 import { responseInterface } from '../../../shared/models/response';
 import { decriptionPipe } from '../../../shared/pipes/decription.pipe';
 import { averagePipe } from '../../../shared/pipes/average.pipe';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'carousel',
   standalone: true,
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.scss',
-  imports: [CommonModule, decriptionPipe, averagePipe],
+  imports: [CommonModule, decriptionPipe, averagePipe, RouterLink],
 })
 export class carouselComponent implements AfterViewInit {
   @ViewChild('swiper') swiper: ElementRef;

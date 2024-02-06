@@ -13,7 +13,9 @@
           <p class="my-3">
             {{ film.overview }}
           </p>
-          <button class="btn px-4 py-2">More Info</button>
+          <button class="btn px-4 py-2" routerLink="/film/{{ film.id }}">
+            More Info
+          </button>
         </div>
       </div>
     </ng-container>
