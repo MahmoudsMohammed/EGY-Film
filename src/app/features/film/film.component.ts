@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { movieService } from '../../shared/services/movies.services';
-import { NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
 import { trailerComponent } from './trailer/trailer.component';
 
@@ -10,7 +10,7 @@ import { trailerComponent } from './trailer/trailer.component';
   standalone: true,
   templateUrl: './film.component.html',
   styleUrl: './film.component.scss',
-  imports: [NgIf, trailerComponent],
+  imports: [NgIf, NgFor, trailerComponent],
 })
 export class filmComponent implements OnInit {
   constructor(
@@ -35,7 +35,13 @@ export class filmComponent implements OnInit {
   getDetails(id: number) {
     this.movieServ.getMovieDetails(id).subscribe((res) => {
       this.details = res;
-      console.log(this.details, 'Details');
+    });
+  }
+
+  getCast(id: number) {
+    this.movieServ.getMovieCredit(id).subscribe((res) => {
+      this.cast = res['cast'];
+      console.log(this.cast);
     });
   }
 
@@ -48,13 +54,6 @@ export class filmComponent implements OnInit {
           );
         }
       });
-    });
-  }
-
-  getCast(id: number) {
-    this.movieServ.getMovieCredit(id).subscribe((res) => {
-      this.cast = res['cast'];
-      console.log(this.cast, 'Cast');
     });
   }
 }

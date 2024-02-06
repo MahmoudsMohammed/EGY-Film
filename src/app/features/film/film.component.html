@@ -2,27 +2,33 @@
   <trailer [Url]="video" *ngIf="watchTrailer" (close)="watchTrailer = false" />
   <div class="container">
     <img
-      *ngIf="false"
       src="https://image.tmdb.org/t/p/w500/{{ details.poster_path }}"
       alt=""
     />
     <div class="info">
-      <h3></h3>
-      <p></p>
+      <h3>{{ details.original_title }}</h3>
+      <p>{{ details.overview }}</p>
       <button class="btn" (click)="watchTrailer = true">watch Trailer</button>
     </div>
-    <!-- <div class="row">
-      <div class="col-lg-4">
-        <div class="row">
-          <div class="col-lg-2">
-            <img src="" alt="" />
-          </div>
-          <div class="col-lg-10">
-            <h4></h4>
-            <p></p>
+    <div class="row cast">
+      <p>{{ details.original_title }} Cast :</p>
+      <div class="row">
+        <div class="col-lg-4" *ngFor="let act of cast">
+          <div class="row act">
+            <div class="col-lg-2">
+              <img
+                *ngIf="act.profile_path"
+                src="https://image.tmdb.org/t/p/w500/{{ act.profile_path }}"
+                alt=""
+              />
+            </div>
+            <div class="col-lg-10">
+              <h4>{{ act.original_name }}</h4>
+              <p>{{ act.character }}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
 </main>
