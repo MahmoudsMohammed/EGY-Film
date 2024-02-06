@@ -41,7 +41,6 @@ export class filmComponent implements OnInit {
   getCast(id: number) {
     this.movieServ.getMovieCredit(id).subscribe((res) => {
       this.cast = res['cast'];
-      console.log(this.cast);
     });
   }
 

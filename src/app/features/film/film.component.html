@@ -1,16 +1,18 @@
 <trailer [Url]="video" *ngIf="watchTrailer" (close)="watchTrailer = false" />
 <main>
   <div class="container">
-    <img
-      src="https://image.tmdb.org/t/p/w500/{{ details.poster_path }}"
-      alt=""
-    />
-    <div class="info">
-      <h3>{{ details.original_title }}</h3>
-      <p>{{ details.overview }}</p>
-      <button class="btn" (click)="watchTrailer = true">watch Trailer</button>
+    <div class="animate__animated animate__fadeInLeftBig">
+      <img
+        src="https://image.tmdb.org/t/p/w500/{{ details.poster_path }}"
+        alt=""
+      />
+      <div class="info">
+        <h3>{{ details.original_title }}</h3>
+        <p>{{ details.overview }}</p>
+        <button class="btn" (click)="watchTrailer = true">watch Trailer</button>
+      </div>
     </div>
-    <div class="row cast">
+    <div class="row cast animate__animated animate__fadeInRightBig">
       <p>{{ details.original_title }} Cast :</p>
       <div class="row">
         <div class="col-lg-4" *ngFor="let act of cast">

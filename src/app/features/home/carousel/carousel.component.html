@@ -3,7 +3,7 @@
   <div class="swiper mySwiper" #swiper>
     <div class="swiper-wrapper px-4 py-3">
       <ng-container *ngFor="let film of films">
-        <div class="swiper-slide" routerLink="/film/{{ film.id }}">
+        <div class="swiper-slide" *ngIf="film.poster_path">
           <img
             src="https://image.tmdb.org/t/p/w500/{{ film.poster_path }}"
             alt=""
@@ -15,9 +15,15 @@
             <p class="m-0 my-2 lh-sm fw-light">
               {{ film.overview | descrip : 20 }}
             </p>
-            <span class="text-success fw-semibold"
-              >Vote Average : {{ film.vote_average | average }}</span
-            >
+            <div class="details">
+              <span class="text-success fw-semibold"
+                >Vote Average : {{ film.vote_average | average }}</span
+              >
+              <a routerLink="/film/{{ film.id }}"
+                >Details
+                <i class="ms-1 fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
           </div>
         </div>
       </ng-container>
