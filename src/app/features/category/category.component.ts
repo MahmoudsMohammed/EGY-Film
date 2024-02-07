@@ -35,8 +35,8 @@ export class categoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.active.params.subscribe((p) => {
-      this.id = +p['id'];
-      this.movieServie.getByCategory(this.id).subscribe((res) => {
+      this.movieServie.getByCategory(+p['id']).subscribe((res) => {
+        this.id = +p['id'];
         this.movies = res.results;
         this.isLoading = false;
       });

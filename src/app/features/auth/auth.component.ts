@@ -99,6 +99,6 @@ export class AuthComponent implements OnInit {
   disappearError() {
     setTimeout(() => {
       this.isError = '';
-    }, 2000);
+    }, 3000);
   }
 }

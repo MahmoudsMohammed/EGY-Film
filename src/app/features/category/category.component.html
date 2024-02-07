@@ -5,12 +5,12 @@
       <ng-container *ngFor="let movie of movies">
         <div
           *ngIf="movie.poster_path"
-          class="animate__animated"
           [ngClass]="{
             animate__lightSpeedInRight: id === 28,
             animate__zoomInDown: id === 12,
             animate__rollIn: id === 16,
-            animate__backInRight: id === 35
+            animate__backInRight: id === 35,
+            animate__animated :true,
           }"
         >
           <div class="film">

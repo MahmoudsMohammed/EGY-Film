@@ -5,6 +5,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
 import { trailerComponent } from './trailer/trailer.component';
 import { loaderComponent } from '../../shared/components/loader/loader.component';
+import { responseInterface } from '../../shared/models/response';
 
 @Component({
   selector: 'film',
@@ -20,10 +21,11 @@ export class filmComponent implements OnInit {
     private sanitizer: DomSanitizer
   ) {}
   id: number = 0;
-  details;
+  details: responseInterface;
   video = null;
   cast;
   watchTrailer = false;
+  hasTrailer = true;
   isLoading = false;
 
   ngOnInit(): void {
@@ -51,13 +53,17 @@ export class filmComponent implements OnInit {
 
   getVideo(id: number) {
     this.movieServ.getMovieVideo(id).subscribe((res) => {
-      res['results'].forEach((e) => {
-        if (e.type === 'Trailer' && this.video === null) {
-          this.video = this.sanitizer.bypassSecurityTrustResourceUrl(
-            `https://www.youtube.com/embed/${e.key}?autoplay=1&mute=0&loop=1&controls=0`
-          );
-        }
-      });
+      if (res['results'].length === 0) {
+        this.hasTrailer = false;
+      } else {
+        res['results'].forEach((e) => {
+          if (e.type === 'Trailer' && this.video === null) {
+            this.video = this.sanitizer.bypassSecurityTrustResourceUrl(
+              `https://www.youtube.com/embed/${e.key}?autoplay=1&mute=0&loop=1&controls=0`
+            );
+          }
+        });
+      }
     });
   }
 }

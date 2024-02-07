@@ -30,7 +30,6 @@ export class authService {
   }
 
   private errorHandler(error: HttpErrorResponse) {
-    console.log(error);
     let message = 'There is unknown error please try later.';
     if (!error.error.error) {
       message = 'Check Your Internet Connection.';
@@ -43,9 +42,13 @@ export class authService {
           message =
             'We have blocked all requests from this device due to unusual activity. Try again later.';
           break;
-        case 'EMAIL_NOT_FOUND' ||
-          'INVALID_EMAIL' ||
-          'INVALID_LOGIN_CREDENTIALS':
+        case 'INVALID_LOGIN_CREDENTIALS':
+          message = 'Please SignUp First.';
+          break;
+        case 'INVALID_EMAIL':
+          message = 'The Email you entered is not valid format.';
+          break;
+        case 'EMAIL_NOT_FOUND':
           message = 'There is no user Signup First.';
           break;
         case 'INVALID_PASSWORD':

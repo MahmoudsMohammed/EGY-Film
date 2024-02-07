@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Root } from '../models/response';
+import { Root, responseInterface } from '../models/response';
 
 const options = {
   params: {
@@ -64,7 +64,7 @@ export class movieService {
   }
 
   getMovieDetails(id: number) {
-    return this.http.get<Root>(
+    return this.http.get<responseInterface>(
       `https://api.themoviedb.org/3/movie/${id}`,
       options
     );
@@ -87,35 +87,6 @@ export class movieService {
   getSearchedMovies(movie: string) {
     return this.http.get<Root>(
       `https://api.themoviedb.org/3/search/movie?query=${movie}`,
-      options
-    );
-  }
-
-  // ##########################
-  getRatedMovies() {
-    return this.http.get<Root>(
-      'https://api.themoviedb.org/3/guest_session/guest_session_id/rated/movies',
-      options
-    );
-  }
-
-  getBannerImage(id: number) {
-    return this.http.get<Root>(
-      `https://api.themoviedb.org/3/movie/${id}/images`,
-      options
-    );
-  }
-
-  getBannerVideo(id: number) {
-    return this.http.get<Root>(
-      `https://api.themoviedb.org/3/movie/${id}/videos`,
-      options
-    );
-  }
-
-  getBannerDetail(id: number) {
-    return this.http.get<Root>(
-      `https://api.themoviedb.org/3/movie/${id}`,
       options
     );
   }
