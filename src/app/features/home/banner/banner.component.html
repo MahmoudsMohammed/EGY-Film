@@ -3,7 +3,7 @@
 <div class="swiper mb-3" #banner>
   <div class="swiper-wrapper">
     <ng-container *ngFor="let film of films">
-      <div class="swiper-slide">
+      <div class="swiper-slide" *ngIf="film.poster_path">
         <img
           src="https://image.tmdb.org/t/p/w500/{{ film.poster_path }}"
           alt=""

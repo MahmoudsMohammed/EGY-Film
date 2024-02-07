@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { movieService } from '../../shared/services/movies.services';
 import { responseInterface } from '../../shared/models/response';
-import { NgClass, NgFor } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { averagePipe } from '../../shared/pipes/average.pipe';
 import { decriptionPipe } from '../../shared/pipes/decription.pipe';
 
@@ -11,7 +11,7 @@ import { decriptionPipe } from '../../shared/pipes/decription.pipe';
   standalone: true,
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss',
-  imports: [NgFor, NgClass, averagePipe, decriptionPipe, RouterModule],
+  imports: [NgFor, NgClass, NgIf, averagePipe, decriptionPipe, RouterModule],
 })
 export class categoryComponent implements OnInit {
   constructor(

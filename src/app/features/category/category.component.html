@@ -3,6 +3,7 @@
     <div class="main-row">
       <ng-container *ngFor="let movie of movies">
         <div
+          *ngIf="movie.poster_path"
           class="animate__animated"
           [ngClass]="{
             animate__lightSpeedInRight: id === 28,

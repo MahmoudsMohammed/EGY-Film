@@ -4,6 +4,7 @@ import { AuthComponent } from './features/auth/auth.component';
 import { filmComponent } from './features/film/film.component';
 import { categoryComponent } from './features/category/category.component';
 import { searchComponent } from './features/search/search.component';
+import { authGuard } from './features/auth/auth.guard.service';
 
 export const routes: Routes = [
   {
@@ -13,18 +14,22 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'film/:id',
     component: filmComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'category/:id',
     component: categoryComponent,
+    canActivate: [authGuard],
   },
   {
-    path:'search',
-    component:searchComponent,
+    path: 'search',
+    component: searchComponent,
+    canActivate: [authGuard],
   },
   {
     path: '**',

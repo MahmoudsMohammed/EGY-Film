@@ -1,4 +1,4 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import {
   AfterViewInit,
   Component,
@@ -13,7 +13,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   standalone: true,
   selector: 'banner',
-  imports: [NgFor, RouterLink],
+  imports: [NgFor, NgIf,RouterLink],
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss',
 })
