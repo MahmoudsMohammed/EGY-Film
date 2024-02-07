@@ -31,7 +31,7 @@ export class AuthComponent implements OnInit {
   googleData(res: any) {
     const userData = JSON.parse(atob(res.split('.')[1]));
     sessionStorage.setItem('userData', JSON.stringify(userData));
-    this.router.navigate(['home']);
     this.authServ.user.next(userData);
+    this.router.navigate(['home']);
   }
 }

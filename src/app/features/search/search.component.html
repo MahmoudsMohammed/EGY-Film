@@ -1,3 +1,4 @@
+<loader *ngIf="isLoading" />
 <main>
   <div class="container pt-3">
     <form (ngSubmit)="onSubmit(form)" #form="ngForm">
@@ -7,7 +8,7 @@
       </div>
       <button>Search</button>
     </form>
-    <div class="row">
+    <div class="row" *ngIf="!isLoading">
       <ng-container *ngFor="let film of result">
         <div class="col-lg-4" *ngIf="film.poster_path">
           <div class="row result" routerLink="/film/{{ film.id }}">

@@ -4,13 +4,14 @@ import { movieService } from '../../shared/services/movies.services';
 import { NgFor, NgIf } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
 import { trailerComponent } from './trailer/trailer.component';
+import { loaderComponent } from '../../shared/components/loader/loader.component';
 
 @Component({
   selector: 'film',
   standalone: true,
   templateUrl: './film.component.html',
   styleUrl: './film.component.scss',
-  imports: [NgIf, NgFor, trailerComponent],
+  imports: [NgIf, NgFor, trailerComponent, loaderComponent],
 })
 export class filmComponent implements OnInit {
   constructor(
@@ -23,12 +24,16 @@ export class filmComponent implements OnInit {
   video = null;
   cast;
   watchTrailer = false;
+  isLoading = false;
+
   ngOnInit(): void {
+    this.isLoading = true;
     this.active.params.subscribe((p) => {
       this.id = +p['id'];
       this.getDetails(this.id);
       this.getVideo(this.id);
       this.getCast(this.id);
+      this.isLoading = false;
     });
   }
 

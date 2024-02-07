@@ -4,11 +4,13 @@ import { movieService } from '../../shared/services/movies.services';
 import { responseInterface } from '../../shared/models/response';
 import { forkJoin, map } from 'rxjs';
 import { bannerComponent } from './banner/banner.component';
+import { loaderComponent } from '../../shared/components/loader/loader.component';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [carouselComponent, bannerComponent],
+  imports: [carouselComponent, bannerComponent, loaderComponent, NgIf],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -20,6 +22,7 @@ export class HomeComponent implements OnInit {
   popular: responseInterface[];
   tv: responseInterface[];
   upcoming: responseInterface[];
+  isLoading = false;
 
   source = [
     this.movieSeriv.getMovies(),
@@ -29,6 +32,7 @@ export class HomeComponent implements OnInit {
     this.movieSeriv.getUpcomingMovies(),
   ];
   ngOnInit(): void {
+    this.isLoading = true;
     forkJoin(this.source)
       .pipe(
         map(([movies, topRated, popular, tv, upcoming]) => {
@@ -41,6 +45,7 @@ export class HomeComponent implements OnInit {
         this.popular = res.popular.results;
         this.tv = res.tv.results;
         this.upcoming = res.upcoming.results;
+        this.isLoading = false;
       });
   }
 }

@@ -1,37 +1,42 @@
-<trailer [Url]="video" *ngIf="watchTrailer" (close)="watchTrailer = false" />
-<main>
-  <div class="container">
-    <div class="animate__animated animate__fadeInLeftBig">
-      <img
-        src="https://image.tmdb.org/t/p/w500/{{ details.poster_path }}"
-        alt=""
-      />
-      <div class="info">
-        <h3>{{ details.original_title }}</h3>
-        <p>{{ details.overview }}</p>
-        <button class="btn" (click)="watchTrailer = true">watch Trailer</button>
+<loader *ngIf="isLoading" />
+<ng-container *ngIf="!isLoading">
+  <trailer [Url]="video" *ngIf="watchTrailer" (close)="watchTrailer = false" />
+  <main>
+    <div class="container">
+      <div class="animate__animated animate__fadeInLeftBig">
+        <img
+          src="https://image.tmdb.org/t/p/w500/{{ details.poster_path }}"
+          alt=""
+        />
+        <div class="info">
+          <h3>{{ details.original_title }}</h3>
+          <p>{{ details.overview }}</p>
+          <button class="btn" (click)="watchTrailer = true">
+            watch Trailer
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="row cast animate__animated animate__fadeInRightBig">
-      <p>{{ details.original_title }} Cast :</p>
-      <div class="row">
-        <ng-container *ngFor="let act of cast">
-          <div class="col-lg-4" *ngIf="act.profile_path">
-            <div class="row act">
-              <div class="col-lg-2">
-                <img
-                  src="https://image.tmdb.org/t/p/w500/{{ act.profile_path }}"
-                  alt=""
-                />
-              </div>
-              <div class="col-lg-10">
-                <h4>{{ act.original_name }}</h4>
-                <p>{{ act.character }}</p>
+      <div class="row cast animate__animated animate__fadeInRightBig">
+        <p>{{ details.original_title }} Cast :</p>
+        <div class="row">
+          <ng-container *ngFor="let act of cast">
+            <div class="col-lg-4" *ngIf="act.profile_path">
+              <div class="row act">
+                <div class="col-lg-2">
+                  <img
+                    src="https://image.tmdb.org/t/p/w500/{{ act.profile_path }}"
+                    alt=""
+                  />
+                </div>
+                <div class="col-lg-10">
+                  <h4>{{ act.original_name }}</h4>
+                  <p>{{ act.character }}</p>
+                </div>
               </div>
             </div>
-          </div>
-        </ng-container>
+          </ng-container>
+        </div>
       </div>
     </div>
-  </div>
-</main>
+  </main>
+</ng-container>
