@@ -48,9 +48,9 @@
       <div class="data d-flex align-items-center ms-md-auto" *ngIf="auth">
         <p class="m-0">
           Welcome
-          <strong>{{ userData.given_name }}</strong>
+          <strong>{{ userData.given_name || userData.name }}</strong>
         </p>
-        <div class="image">
+        <div class="image" *ngIf="userData.picture">
           <img src="{{ userData.picture }}" alt="" />
         </div>
         <a class="signin" *ngIf="auth" (click)="onSignOut()" routerLink="auth">

@@ -30,7 +30,35 @@
       left: 50%;
       transform: translate(-50%, -50%);
       width: 600px;
-      max-width: 100%;
+      max-width: 95%;
+    }
+    input.ng-invalid.ng-touched {
+      border-color: #e50914;
+    }
+    // .form-control:focus {
+    //   border-color: #e50914;
+    //   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px #e50914;
+    // }
+    .controls {
+      & {
+        display: flex;
+        gap: 10px;
+        @media (max-width: 420px) {
+          flex-direction: column;
+        }
+      }
+      button {
+        display: block;
+        width: 100%;
+      }
+      button:first-of-type {
+        background-color: #e50914;
+        color: white;
+        transition: 0.3s;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
     }
     .google {
       & {
