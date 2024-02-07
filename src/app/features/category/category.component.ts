@@ -26,13 +26,14 @@ export class categoryComponent implements OnInit {
   constructor(
     private active: ActivatedRoute,
     private movieServie: movieService
-  ) {}
+  ) {
+    this.isLoading = true;
+  }
   id = 0;
   movies: responseInterface[];
   isLoading = false;
 
   ngOnInit(): void {
-    this.isLoading = true;
     this.active.params.subscribe((p) => {
       this.id = +p['id'];
       this.movieServie.getByCategory(this.id).subscribe((res) => {

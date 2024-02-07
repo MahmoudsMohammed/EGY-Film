@@ -24,23 +24,23 @@
         <a
           class="nav-link"
           aria-current="page"
-          routerLink="home"
+          routerLink="/home"
           routerLinkActive="active"
           >Home</a
         >
-        <a class="nav-link" routerLink="category/28" routerLinkActive="active"
+        <a class="nav-link" routerLink="/category/28" routerLinkActive="active"
           >Action</a
         >
-        <a class="nav-link" routerLink="category/12" routerLinkActive="active"
+        <a class="nav-link" routerLink="/category/12" routerLinkActive="active"
           >Adventure</a
         >
-        <a class="nav-link" routerLink="category/16" routerLinkActive="active"
+        <a class="nav-link" routerLink="/category/16" routerLinkActive="active"
           >Animation</a
         >
-        <a class="nav-link" routerLink="category/35" routerLinkActive="active"
+        <a class="nav-link" routerLink="/category/35" routerLinkActive="active"
           >Comedy</a
         >
-        <button class="nav-link search" routerLink="search">
+        <button class="nav-link search" routerLink="/search">
           <i class="fa-solid fa-magnifying-glass"></i> Search
         </button>
       </div>
@@ -53,7 +53,7 @@
         <div class="image" *ngIf="userData.picture">
           <img src="{{ userData.picture }}" alt="" />
         </div>
-        <a class="signin" *ngIf="auth" (click)="onSignOut()" routerLink="auth">
+        <a class="signin" *ngIf="auth" (click)="onSignOut()" routerLink="/auth">
           |
           <i class="fa-solid fa-right-to-bracket"></i> SignOut
         </a>

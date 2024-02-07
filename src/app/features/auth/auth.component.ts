@@ -65,7 +65,7 @@ export class AuthComponent implements OnInit {
         .SignUp(this.form.value.email, this.form.value.pass)
         .subscribe(
           (res) => {
-            let name = this.form.value.name as string;
+            let name = (this.form.value.name as string).split(' ')[0];
             res['name'] = name[0].toUpperCase() + name.slice(1, name.length);
             sessionStorage.setItem('userData', JSON.stringify(res));
             this.authServ.user.next(res);
@@ -82,7 +82,7 @@ export class AuthComponent implements OnInit {
         .SignIn(this.form.value.email, this.form.value.pass)
         .subscribe(
           (res) => {
-            let name = this.form.value.name as string;
+            let name = (this.form.value.name as string).split(' ')[0];
             res['name'] = name[0].toUpperCase() + name.slice(1, name.length);
             sessionStorage.setItem('userData', JSON.stringify(res));
             this.authServ.user.next(res);
