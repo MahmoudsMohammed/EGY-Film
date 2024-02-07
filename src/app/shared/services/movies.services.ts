@@ -84,6 +84,13 @@ export class movieService {
     );
   }
 
+  getSearchedMovies(movie: string) {
+    return this.http.get<Root>(
+      `https://api.themoviedb.org/3/search/movie?query=${movie}`,
+      options
+    );
+  }
+
   // ##########################
   getRatedMovies() {
     return this.http.get<Root>(
