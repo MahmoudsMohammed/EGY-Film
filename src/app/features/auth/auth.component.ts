@@ -45,7 +45,7 @@ export class AuthComponent implements OnInit {
     // 638827466645-v485amo6q5l59vjsqanpqndjakrlh5o6.apps.googleusercontent.com
     google.accounts.id.initialize({
       client_id:
-        '1002217737761-jd0ggvvqpknlmj4u20eicqf0e3rave2c.apps.googleusercontent.com',
+        '638827466645-v485amo6q5l59vjsqanpqndjakrlh5o6.apps.googleusercontent.com',
       callback: (res) => this.ngZone.run(() => this.googleData(res.credential)),
     });
     setTimeout(() => {
