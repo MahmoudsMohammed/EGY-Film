@@ -1,5 +1,5 @@
 declare var google: any;
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { authService } from './auth.service';
 import {
@@ -18,7 +18,11 @@ import { NgIf } from '@angular/common';
   styleUrl: './auth.component.scss',
 })
 export class AuthComponent implements OnInit {
-  constructor(private router: Router, private authServ: authService) {}
+  constructor(
+    private router: Router,
+    private authServ: authService,
+    private ngZone: NgZone
+  ) {}
 
   form: FormGroup;
   signIn = true;
@@ -35,12 +39,14 @@ export class AuthComponent implements OnInit {
       ]),
     });
     // Google
+    // id hosting
+    // 1002217737761-jd0ggvvqpknlmj4u20eicqf0e3rave2c.apps.googleusercontent.com
+    // id local
+    // 638827466645-v485amo6q5l59vjsqanpqndjakrlh5o6.apps.googleusercontent.com
     google.accounts.id.initialize({
       client_id:
-        '638827466645-v485amo6q5l59vjsqanpqndjakrlh5o6.apps.googleusercontent.com',
-      callback: (res) => {
-        this.googleData(res.credential);
-      },
+        '1002217737761-jd0ggvvqpknlmj4u20eicqf0e3rave2c.apps.googleusercontent.com',
+      callback: (res) => this.ngZone.run(() => this.googleData(res.credential)),
     });
     google.accounts.id.renderButton(document.getElementById('google-btn'), {
       theme: 'filled_black',
