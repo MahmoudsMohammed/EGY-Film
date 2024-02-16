@@ -1,5 +1,5 @@
 declare var google: any;
-import { Component, EventEmitter, OnInit, Output, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { authService } from './auth.service';
 import {
@@ -45,15 +45,17 @@ export class AuthComponent implements OnInit {
     // 638827466645-v485amo6q5l59vjsqanpqndjakrlh5o6.apps.googleusercontent.com
     google.accounts.id.initialize({
       client_id:
-        '638827466645-v485amo6q5l59vjsqanpqndjakrlh5o6.apps.googleusercontent.com',
+        '1002217737761-jd0ggvvqpknlmj4u20eicqf0e3rave2c.apps.googleusercontent.com',
       callback: (res) => this.ngZone.run(() => this.googleData(res.credential)),
     });
-    google.accounts.id.renderButton(document.getElementById('google-btn'), {
-      theme: 'filled_black',
-      size: 'large',
-      shape: 'rectangle',
-      width: 280,
-    });
+    setTimeout(() => {
+      google.accounts.id.renderButton(document.getElementById('google-btn'), {
+        theme: 'filled_black',
+        size: 'large',
+        shape: 'rectangle',
+        width: 280,
+      });
+    }, 1000);
   }
 
   googleData(res: any) {
