@@ -6,36 +6,34 @@
   <form class="auth" (ngSubmit)="onSubmit()" [formGroup]="form">
     <p class="alert alert-danger py-2" *ngIf="isError">{{ isError }}</p>
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label text-dark"
-        >User Name</label
-      >
+      <label for="name" class="form-label text-dark">User Name</label>
       <input
         formControlName="name"
         type="email"
         class="form-control"
-        id="exampleInputEmail1"
+        id="name"
         aria-describedby="emailHelp"
       />
     </div>
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label text-dark">Email</label>
+      <label for="email" class="form-label text-dark">Email</label>
       <input
         formControlName="email"
         type="email"
         class="form-control"
-        id="exampleInputEmail1"
+        id="email"
         aria-describedby="emailHelp"
       />
     </div>
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label text-dark"
+      <label for="password" class="form-label text-dark"
         >Password (6+ characters)
       </label>
       <input
         type="password"
         formControlName="pass"
         class="form-control"
-        id="exampleInputPassword1"
+        id="password"
       />
     </div>
     <div class="controls text-center mb-3">
