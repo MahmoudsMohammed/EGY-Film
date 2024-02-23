@@ -1,27 +1,62 @@
 # EGY-Film
 
+Single Page App using Angular and The Movie Database to display movies and more features.
+
+## Table of contents
+
+- [Overview](#overview)
+  - [EGY-Film features](#EGY-Film-features)
+  - [project Details](#Project-Details)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
+
+## Overview
+
+### EGY-Film features
+
+Users should be able to:
+
+- Authentication using email and password or using a Google account.
+- Display movies, search for movies, filter movies by category, and see film details like cast and trailer.
+- Responsive Design with animation and image sliders.
+
+## Project Details
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
 
-## Development server
+### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Links
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Live Site URL : [EGY-Film](https://egy-film-9dadb.web.app/auth)
 
-## Build
+## My process
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Built with
 
-## Running unit tests
+- Angular
+- Angular CLI
+- SCSS
+- TypeScript
+- Bootstrap
+- Firebase
+- Animate.css
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### What I learned
 
-## Running end-to-end tests
+- How structure the project Folders and  files.
+- Using Git and Github.
+- Use SASS which makes Nesting and Variables More Organized.
+- Responsive Design based on the viewport.
+- Make authentication using firebase and Google accounts.
+- Route Guard to prevent unauthorized access.
+- Pipes, Services, Reactive and Template Driven Forms, and more of the core concepts of Angular help create SPA(single page application).
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Author
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Linkedin - [Mahmoud Sayed](https://www.linkedin.com/in/mahmoud-sayed-b85536217/)
+- Codewars - [@MahmoudsMohammed](https://www.codewars.com/users/MahmoudsMohammed)
